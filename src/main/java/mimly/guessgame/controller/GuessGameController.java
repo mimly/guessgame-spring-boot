@@ -5,6 +5,7 @@ import mimly.guessgame.model.Guess;
 import mimly.guessgame.model.GuessGame;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,10 +39,12 @@ public class GuessGameController {
     }
 
     @GetMapping
-    public String doGet() {
+    public String doGet(Model model) {
         if (guessGame.isOver()) {
             return "redirect:/gameover";
         }
+
+        model.addAttribute("guessGame", guessGame);
         return "index";
     }
 

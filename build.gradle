@@ -11,7 +11,7 @@ sourceCompatibility = '1.8'
 
 configurations {
     compileOnly {
-    extendsFrom annotationProcessor
+        extendsFrom annotationProcessor
     }
 }
 
@@ -22,6 +22,7 @@ repositories {
 dependencies {
     implementation 'org.apache.commons:commons-lang3'
     implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.session:spring-session-core'
@@ -30,7 +31,6 @@ dependencies {
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-    providedRuntime 'org.apache.tomcat.embed:tomcat-embed-jasper'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
